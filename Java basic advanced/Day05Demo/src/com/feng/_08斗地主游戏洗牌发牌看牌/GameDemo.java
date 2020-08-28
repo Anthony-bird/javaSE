@@ -1,5 +1,6 @@
 package com.feng._08斗地主游戏洗牌发牌看牌;
 
+import java.security.AllPermission;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -39,20 +40,27 @@ public class GameDemo {
         // 2.定义一个数组存储牌的花色，类型确定，个数确定请用数组存储！
         String[] colors = { "♠", "♥", "♣", "♦" };
         // 3.先遍历点数与四种花色组装成牌对象存入到集合中去
+        int index = 0;
         for (String number : numbers) {
             // 遍历花色
             for (String color : colors) {
                 // 创建一张牌对象封装点数和花色
-                Card card = new Card(number , color);
+                Card card = new Card(number , color,index++);
                 ALL_CARDS.add(card);
             }
         }
         // 4.单独加入大小王
-        Collections.addAll(ALL_CARDS ,  new Card("","🃏") ,new Card("","👲") );
+        Collections.addAll(ALL_CARDS ,  new Card("","🃏",index++) ,new Card("","👲",index++) );
         System.out.println("输出新牌："+ALL_CARDS);
     }
 
     public static void main(String[] args) {
 
+        Collections.shuffle(ALL_CARDS);
+        System.out.println("洗牌后" + ALL_CARDS);
+
+        List<Card> linhuchong = new ArrayList<>();
+        List<Card> jiuMoZhi = new ArrayList<>();
+        List<Card> dongfangbubai = new ArrayList<>();
     }
 }

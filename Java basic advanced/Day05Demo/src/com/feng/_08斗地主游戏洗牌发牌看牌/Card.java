@@ -4,14 +4,18 @@ package com.feng._08斗地主游戏洗牌发牌看牌;
 public class Card {
     private String number;
     private String color;
+    private int index;
 
     public Card() {
     }
 
-    public Card(String number, String color) {
+    public Card(String number, String color, int index) {
         this.number = number;
         this.color = color;
+        this.index = index;
     }
+
+
 
     public String getNumber() {
         return number;
@@ -27,6 +31,14 @@ public class Card {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
     }
 
     @Override
