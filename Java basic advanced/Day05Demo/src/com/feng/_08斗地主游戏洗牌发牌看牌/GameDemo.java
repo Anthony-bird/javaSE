@@ -3,6 +3,7 @@ package com.feng._08斗地主游戏洗牌发牌看牌;
 import java.security.AllPermission;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -55,12 +56,55 @@ public class GameDemo {
     }
 
     public static void main(String[] args) {
-
+        /**
+         * c.洗牌
+         * */
         Collections.shuffle(ALL_CARDS);
         System.out.println("洗牌后" + ALL_CARDS);
-
+        /**
+         * d.定义
+         * */
         List<Card> linhuchong = new ArrayList<>();
         List<Card> jiuMoZhi = new ArrayList<>();
         List<Card> dongfangbubai = new ArrayList<>();
+
+        /**
+         * e 发牌  发51张牌
+         */
+        for (int i=0;i<ALL_CARDS.size()-3;i++){
+            Card c = ALL_CARDS.get(i);
+            if (i % 3 == 0){
+                linhuchong.add(c);
+            }else if (i % 3 == 1){
+                jiuMoZhi.add(c);
+            }else if (i % 3 == 2){
+                dongfangbubai.add(c);
+            }
+        }
+        /**
+         * f.排序
+         * */
+        sortCards(linhuchong);
+        sortCards(jiuMoZhi);
+        sortCards(dongfangbubai);
+        /**
+         * g.看牌
+         * */
+        System.out.println("令狐冲" + linhuchong);
+        System.out.println("鸠智摩" + jiuMoZhi);
+        System.out.println("东方不败" + dongfangbubai);
+        List<Card> lastThreeCards = ALL_CARDS.subList(ALL_CARDS.size() - 3, ALL_CARDS.size());
+        System.out.println("底牌" + lastThreeCards);
+    }
+
+        private static void sortCards(List<Card> cards) {
+        Collections.sort(cards ,new Comparator<Card>() {
+
+            @Override
+            public int compare(Card o1, Card o2) {
+                return o2.getIndex()-o1.getIndex();
+            }
+
+        });
     }
 }
