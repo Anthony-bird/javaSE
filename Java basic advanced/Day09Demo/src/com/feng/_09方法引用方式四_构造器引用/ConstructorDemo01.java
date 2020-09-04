@@ -33,18 +33,18 @@ public class ConstructorDemo01 {
         // 我们想指定转换成字符串类型的数组！！
         // 最新的写法可以结合构造器引用实现 。
         // default <T> T[] toArray(IntFunction<T[]> generator)
-        String[] strs = lists.toArray(new IntFunction<String[]>() {
-            @Override
-            public String[] apply(int value) {
-                return new String[value];
-            }
-        });
-
-        String[] strs1 = lists.toArray(s -> new String[s] );
-
-        String[] strs2 = lists.toArray(String[]::new);
-
-        System.out.println("String类型的数组："+ Arrays.toString(strs2));
+//        String[] strs = lists.toArray(new IntFunction<String[]>() {
+//          @Override
+//          public String[] apply(int value) {
+//              return new String[value];
+//          }
+//        });
+//
+//        String[] strs1 = lists.toArray(s -> new String[s] );
+//
+//        String[] strs2 = lists.toArray(String[]::new);
+//
+//        System.out.println("String类型的数组："+ Arrays.toString(strs2));
 
 
     }

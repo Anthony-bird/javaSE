@@ -46,7 +46,7 @@ public class FileDemo01 {
         System.out.println(f1.length()); // 获取文件的大小，字节大小
 
         // 2.创建文件对象：使用相对路径
-        File f2 = new File("Day09Demo/src/dlei01.txt");
+        File f2 = new File("Day09Demo/src/dlei01.txt.txt");
         System.out.println(f2.length());
 
         // 3.创建文件对象：代表文件夹。

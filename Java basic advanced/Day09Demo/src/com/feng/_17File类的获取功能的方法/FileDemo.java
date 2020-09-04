@@ -12,7 +12,7 @@ import java.io.File;
 public class FileDemo {
     public static void main(String[] args) {
         // 1.绝对路径创建一个文件对象
-        File f1 = new File("D:/itcast/图片资源/meinv.jpg");
+        File f1 = new File("F:/回忆/food.jpg");
         // a.获取它的绝对路径。
         System.out.println(f1.getAbsolutePath());
         // b.获取文件定义的时候使用的路径。
@@ -25,7 +25,7 @@ public class FileDemo {
         System.out.println("------------------------");
 
         // 2.相对路径
-        File f2 = new File("Day09Demo/src/dlei01.txt");
+        File f2 = new File("Day09Demo/src/dlei01.txt.txt");
         // a.获取它的绝对路径。
         System.out.println(f2.getAbsolutePath());
         // b.获取文件定义的时候使用的路径。
