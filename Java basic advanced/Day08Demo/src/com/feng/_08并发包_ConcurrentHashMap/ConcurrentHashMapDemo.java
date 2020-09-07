@@ -2,6 +2,8 @@ package com.feng._08并发包_ConcurrentHashMap;
 
 import java.util.Hashtable;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 /**
  目标：并发包的介绍。(面试的重点中的重点)
 
@@ -24,8 +26,8 @@ import java.util.Map;
 public class ConcurrentHashMapDemo {
     // 定义一个静态的HashMap集合，只有一个容器。
     // public static Map<String,String> map = new HashMap<>();
-    public static Map<String,String> map = new Hashtable<>();
-    //public static Map<String,String> map = new ConcurrentHashMap<>();
+    //public static Map<String,String> map = new Hashtable<>();
+    public static Map<String,String> map = new ConcurrentHashMap<>();
 
     public static void main(String[] args) throws InterruptedException {
         // HashMap线程不安全演示。
